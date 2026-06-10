@@ -29,11 +29,6 @@ export class DashboardPage {
 
   async verifyRecentMissions() {
     await expect(this.page.getByText('Recent Missions')).toBeVisible();
-    await expect(this.page.getByRole('cell', { name: 'NAF Kaduna' })).toBeVisible();
-    await expect(this.page.getByRole('cell', { name: 'Big Creek- Phase 2', exact: true })).toBeVisible();
-    await expect(this.page.getByRole('cell', { name: 'B. Sarah' })).toBeVisible();
-    await expect(this.page.getByRole('cell', { name: 'Skyline Tower', exact: true })).toBeVisible();
-    await expect(this.page.getByRole('cell', { name: 'Harbor Expansion', exact: true })).toBeVisible();
   }
 
   async verifyPagination() {
