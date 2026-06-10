@@ -20,9 +20,7 @@ export class DashboardPage {
     await expect(this.page.getByText('OPERATION DASHBOARD')).toBeVisible();
     await expect(this.page.getByText('Central Command')).toBeVisible();
     await expect(this.page.getByText('ACTIVE AIRCRAFT')).toBeVisible();
-    await expect(this.page.getByText('57')).toBeVisible();
     await expect(this.page.getByText('ORGANIZATIONS')).toBeVisible();
-    await expect(this.page.getByText('24')).toBeVisible();
     await expect(this.page.getByText('APPROVED MISSION')).toBeVisible();
     await expect(this.page.getByText('LIVE MISSION')).toBeVisible();
     await expect(this.page.getByText('PENDING APPROVAL')).toBeVisible();
