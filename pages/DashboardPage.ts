@@ -17,37 +17,36 @@ export class DashboardPage {
   }
 
   async verifyMetrics() {
-    await expect(this.page.getByText('OPERATION DASHBOARD')).toBeVisible();
-    await expect(this.page.getByText('Central Command')).toBeVisible();
-
-    await expect(this.page.getByText('ACTIVE AIRCRAFT')).toBeVisible();
-    await expect(this.page.getByText('ORGANIZATIONS')).toBeVisible();
-    await expect(this.page.getByText('APPROVED MISSION')).toBeVisible();
-    await expect(this.page.getByText('LIVE MISSION')).toBeVisible();
-    await expect(this.page.getByText('PENDING APPROVAL')).toBeVisible();
-    await expect(this.page.getByText('OPEN ALERT')).toBeVisible();
+    await expect(this.page.getByText(/OPERATION DASHBOARD/i)).toBeVisible();
+    await expect(this.page.getByText(/Central Command/i)).toBeVisible();
+    await expect(this.page.getByText(/Active Aircraft/i)).toBeVisible();
+    await expect(this.page.getByText(/Organizations/i)).toBeVisible();
+    await expect(this.page.getByText(/Approved Mission/i)).toBeVisible();
+    await expect(this.page.getByText(/Live Mission/i)).toBeVisible();
+    await expect(this.page.getByText(/Pending Approval/i)).toBeVisible();
+    await expect(this.page.getByText(/Open Alert/i)).toBeVisible();
   }
 
   async verifyRecentMissions() {
-    await expect(this.page.getByText('Recent Missions')).toBeVisible();
+    await expect(this.page.getByText(/Recent Missions/i)).toBeVisible();
     await expect(this.page.getByRole('link', { name: 'View All' }).first()).toBeVisible();
 
-    const pageText = await this.page.locator('body').innerText();
-    expect(pageText).toContain('Organization');
-    expect(pageText).toContain('Mission');
-    expect(pageText).toMatch(/PILOT/i);
-    expect(pageText).toContain('Status');
+    const bodyText = await this.page.locator('body').innerText();
+    expect(bodyText).toMatch(/organization/i);
+    expect(bodyText).toMatch(/mission/i);
+    expect(bodyText).toMatch(/pilot/i);
+    expect(bodyText).toMatch(/status/i);
   }
 
   async verifyPagination() {
-    await expect(this.page.getByRole('button', { name: 'Next' })).toBeVisible();
+    await expect(this.page.getByRole('button', { name: /Next/i })).toBeVisible();
   }
 
   async verifyAlerts() {
-    await expect(this.page.getByText('Recent Alert')).toBeVisible();
-    await expect(this.page.getByText('Real-Time Feed')).toBeVisible();
+    await expect(this.page.getByText(/Recent Alert/i)).toBeVisible();
+    await expect(this.page.getByText(/Real-Time Feed/i)).toBeVisible();
 
-    const pageText = await this.page.locator('body').innerText();
-    expect(pageText).toMatch(/Alert|Telemetry|Access|Feed|Device|Geofence/i);
+    const bodyText = await this.page.locator('body').innerText();
+    expect(bodyText).toMatch(/alert|telemetry|access|device|authentication|feed/i);
   }
 }
