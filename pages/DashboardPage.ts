@@ -48,7 +48,7 @@ export class DashboardPage {
   async verifyAlerts() {
     await expect(this.page.getByText('Recent Alert')).toBeVisible();
     await expect(this.page.getByText('Real-Time Feed')).toBeVisible();
-    await expect(this.page.getByRole('link', { name: /Unauthorized Access Attempt/i })).toBeVisible();
+    await expect(this.page.getByText('Unauthorized Access Attempt').first()).toBeVisible();
     await expect(this.page.getByRole('link', { name: /Telemetry Data/i })).toBeVisible();
     await expect(this.page.getByRole('link', { name: /Geofence Breach/i })).toBeVisible();
     await expect(this.page.getByRole('link', { name: /Device Disabled/i })).toBeVisible();

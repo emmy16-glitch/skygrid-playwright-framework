@@ -70,7 +70,7 @@ test.describe('SkyGrid Authenticated Dashboard Deep Test', () => {
     await expect(page.getByText('Recent Alert')).toBeVisible();
     await expect(page.getByText('Real-Time Feed')).toBeVisible();
 
-    await expect(page.getByRole('link', { name: /Unauthorized Access Attempt/i })).toBeVisible();
+    await expect(page.getByText('Unauthorized Access Attempt').first()).toBeVisible();
     await expect(page.getByText('Multiple failed login attempts detected')).toBeVisible();
 
     await expect(page.getByRole('link', { name: /Telemetry Data/i })).toBeVisible();

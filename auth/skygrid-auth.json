@@ -2,20 +2,20 @@
   "cookies": [
     {
       "name": "skygrid_cc_csrftoken",
-      "value": "S7AixAerLAZbuvVgSINcxQALGmN6N2ki",
+      "value": "y1jRD7nEeD7ZuZGxNH2Ktdznt2R4Ka5W",
       "domain": "skygridinc.live",
       "path": "/",
-      "expires": 1812543895.411735,
+      "expires": 1812545532.076015,
       "httpOnly": true,
       "secure": true,
       "sameSite": "Lax"
     },
     {
       "name": "skygrid_cc_sessionid",
-      "value": "cm6uu1av4dgq73f9gi164d9n2tmpm587",
+      "value": "ligcx3z83vs374y0ybmk0sb8pd76u1m4",
       "domain": "skygridinc.live",
       "path": "/",
-      "expires": 1782303895.08218,
+      "expires": 1782305531.625723,
       "httpOnly": true,
       "secure": true,
       "sameSite": "Lax"
