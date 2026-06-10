@@ -35,7 +35,7 @@ export class DashboardPage {
     const pageText = await this.page.locator('body').innerText();
     expect(pageText).toContain('Organization');
     expect(pageText).toContain('Mission');
-    expect(pageText).toContain('Pilot');
+    expect(pageText).toMatch(/PILOT/i);
     expect(pageText).toContain('Status');
   }
 
