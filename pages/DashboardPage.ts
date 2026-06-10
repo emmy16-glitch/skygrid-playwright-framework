@@ -4,7 +4,7 @@ export class DashboardPage {
   constructor(private page: Page) {}
 
   async verifySidebar() {
-    await expect(this.page.getByRole('link', { name: 'Dashboard' })).toBeVisible();
+    await expect(this.page.getByRole('link', { name: 'Dashboard', exact: true })).toBeVisible();
     await expect(this.page.getByRole('link', { name: 'Organization' })).toBeVisible();
     await expect(this.page.getByRole('link', { name: 'Fleet & Assets' })).toBeVisible();
     await expect(this.page.getByRole('link', { name: 'Mission Center' })).toBeVisible();
